@@ -22,12 +22,12 @@ print("Исходный список: ", list_diff)
 # Цикл поиска чисел и обособление их кавычками
 while i < len(list_diff):
     current = list_diff[i]
-    if current[0] == "+" or current[0] == "-":
-        add_sign = current[0]
-        current = current[1:]
+    if current[0] == "+" or current[0] == "-":  # Если первый символ содержит знак
+        add_sign = current[0]                   # , то запоминаем знак
+        current = current[1:]                   # и убираем символ знака из строки
     else:
         add_sign = ''
-    if current.isdigit():
+    if current.isdigit():                       # Если строка является целым числом
         list_new.append('"')
         list_new.append(f'{add_sign}{int(current):02d}')
         list_new.append('"')
